@@ -1,10 +1,9 @@
 from PIL import Image, ImageOps
 
 # Open the negative photo
-negative_image = Image.open('image.jpg')
+photo = ['1.jpg', '2.jpg', '3.jpg', '4.jpg']
+negative_image = []
 
-# Convert the negative photo to positive by inverting the colors
-positive_image = ImageOps.invert(negative_image)
 
-# Save the positive photo
-positive_image.save('positive_photo.png')
+for i in photo:
+    ImageOps.invert(Image.open(i)).save('convert-'+i)
